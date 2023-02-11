@@ -6,7 +6,7 @@ let lastElem = null
 let lastVideoPlayed = null
 
 export default function Video({video}) {
-  const {big_poster, description, title, preview_src} = video?.attributes;
+  const {small_poster, description, title, preview_src} = video?.attributes;
   const ref = useRef();
   const videoRef = useRef();
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function Video({video}) {
   })
 
   return <div className="rounded overflow-hidden shadow-lg h-4/6 lg:h-max" key={video.id} ref={ref}>
-    <video preload="none" muted="muted" src={preview_src} className={videoClassNames} poster={big_poster} ref={videoRef}/>
+    <video preload="none" muted="muted" src={preview_src} className={videoClassNames} poster={small_poster} ref={videoRef}/>
 
     <div className="px-6 py-4">
       <div className="font-bold text-xl mb-2">{title}</div>
